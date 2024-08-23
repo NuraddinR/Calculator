@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#CalculateCard {
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    padding:  15px;
+    border-radius: 10px;
+    border: 2px solid rgb(148, 148, 148);
+
+
+    span {
+        width: 100%;
+        padding: 5px 5px;
+        background-color: rgb(255, 248, 241);
+        border-radius: 5px;
+        border: 0.2px solid black;
+        display: flex;
+        gap: 5px;
+    }
+
+    #enterFirstNumber {
+        padding: 8px;
+        border: 0.2px solid rgb(145, 145, 145);
+        border-radius: 5px;
+    }
+
+    #enterSecondNumber {
+        padding: 8px;
+        border: 0.2px solid rgb(145, 145, 145);
+        border-radius: 5px;
+    }
+}
+
+#CalculateCard *{
+    width: 100%;
+}
+
+#selectOperator {
+    background-color: rgb(66, 66, 253);
+    color: white;
+    border-radius: 2px;
+    padding: 3px;
+}
+
+#btn1 {
+    padding: 10px;
+    background-color: rgb(66, 178, 219);
+    border: none;
+    border-radius: 4px;
+    color: white;
+}
+
+#btn2 {
+    padding: 10px;
+    background-color: rgb(236, 190, 74);
+    border: none;
+    border-radius: 4px;
+}
+
+
