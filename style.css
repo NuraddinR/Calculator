@@ -2,74 +2,146 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  }
+  
+  body {
+    background: linear-gradient(135deg, #0a2342, #1f3a93);
     height: 100vh;
-}
-
-#CalculateCard {
-    width: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #e0e0e0;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    pointer-events: none;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.2;
+    z-index: 0;
+  }
+  
+  #CalculateCard {
+    width: 380px;
+    padding: 30px 32px;
+    background: linear-gradient(145deg, #142850, #274690);
+    border-radius: 18px;
+    box-shadow:
+      0 10px 30px rgba(19, 35, 53, 0.7),
+      inset 0 0 15px rgba(255, 255, 255, 0.1);
+    display: flex;
     flex-direction: column;
-    gap: 10px;
-    padding:  15px;
-    border-radius: 10px;
-    border: 2px solid rgb(148, 148, 148);
-
-
-    span {
-        width: 100%;
-        padding: 5px 5px;
-        background-color: rgb(255, 248, 241);
-        border-radius: 5px;
-        border: 0.2px solid black;
-        display: flex;
-        gap: 5px;
-    }
-
-    #enterFirstNumber {
-        padding: 8px;
-        border: 0.2px solid rgb(145, 145, 145);
-        border-radius: 5px;
-    }
-
-    #enterSecondNumber {
-        padding: 8px;
-        border: 0.2px solid rgb(145, 145, 145);
-        border-radius: 5px;
-    }
-}
-
-#CalculateCard *{
+    gap: 20px;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease;
+  }
+  
+  #CalculateCard:hover {
+    transform: scale(1.03);
+    box-shadow:
+      0 15px 40px rgba(19, 35, 53, 0.9),
+      inset 0 0 20px rgba(255, 255, 255, 0.15);
+  }
+  
+  #CalculateCard span {
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-align: center;
+    background: linear-gradient(90deg, #a3cef1, #7b9acc);
+    color: #0a2342;
+    padding: 14px 0;
+    border-radius: 12px;
+    user-select: none;
+    box-shadow: 0 0 15px rgba(163, 206, 241, 0.6);
+  }
+  
+  label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: block;
+    color: #d1d9e6;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+  }
+  
+  input[type="number"],
+  select {
     width: 100%;
-}
-
-#selectOperator {
-    background-color: rgb(66, 66, 253);
-    color: white;
-    border-radius: 2px;
-    padding: 3px;
-}
-
-#btn1 {
-    padding: 10px;
-    background-color: rgb(66, 178, 219);
+    padding: 14px 18px;
+    border-radius: 12px;
     border: none;
-    border-radius: 4px;
-    color: white;
-}
+    font-size: 1rem;
+    background: linear-gradient(145deg, #274690, #142850);
+    color: #e0e0e0;
+    box-shadow:
+      inset 5px 5px 10px #1b2e5f,
+      inset -5px -5px 10px #3461b3;
+    transition: box-shadow 0.3s ease, background 0.3s ease;
+    outline: none;
+  }
 
-#btn2 {
-    padding: 10px;
-    background-color: rgb(236, 190, 74);
+  select option {
+    background-color: white !important;
+    color: black !important;
+  }
+  
+  input[type="number"]::placeholder {
+    color: #a3b1c6;
+  }
+  
+  input[type="number"]:focus,
+  select:focus {
+    box-shadow:
+      inset 5px 5px 12px #3e6ad1,
+      inset -5px -5px 12px #4e7be4;
+    background: linear-gradient(145deg, #3461b3, #1f3a93);
+    color: #f0f6ff;
+  }
+  
+  #btn1,
+  #btn2 {
+    width: 100%;
+    padding: 16px 0;
+    border-radius: 14px;
+    font-weight: 700;
+    font-size: 1.15rem;
+    cursor: pointer;
+    user-select: none;
     border: none;
-    border-radius: 4px;
-}
-
-
+    box-shadow:
+      0 8px 20px rgba(25, 45, 100, 0.6);
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  #btn1 {
+    background: linear-gradient(145deg, #a3cef1, #5f92d1);
+    color: #142850;
+    text-shadow: 0 1px 2px rgba(255,255,255,0.7);
+  }
+  
+  #btn1:hover {
+    background: linear-gradient(145deg, #7bb3e0, #3f6ec4);
+    transform: scale(1.07);
+    box-shadow:
+      0 12px 25px rgba(50, 80, 160, 0.8);
+  }
+  
+  #btn2 {
+    background: linear-gradient(145deg, #f07272, #d94141);
+    color: #fff5f5;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+  }
+  
+  #btn2:hover {
+    background: linear-gradient(145deg, #d94141, #b02828);
+    transform: scale(1.07);
+    box-shadow:
+      0 12px 25px rgba(210, 64, 64, 0.8);
+  }
+  
